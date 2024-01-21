@@ -258,7 +258,7 @@ size_t espnowSerial::write(const uint8_t *buffer, size_t size){
 
 String espnowSerial::mac2str(const uint8_t *mac ){
     char char_str[18];
-    snprintf(char_str, sizeof(char_str), "%02x:%02x:%02x:%02x:%02x:%02x", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+    snprintf(char_str, sizeof(char_str), "%02X:%02X:%02X:%02X:%02X:%02X", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
     String ret = char_str;
     return ret;
 }

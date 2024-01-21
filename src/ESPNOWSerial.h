@@ -80,6 +80,13 @@ public:
   bool begin(uint8_t *send_mac, uint8_t channel, uint8_t *self_mac );
   bool begin(uint8_t *send_mac, uint8_t channel );
 
+  // deinit
+  void deinit(){
+    esp_now_deinit();
+    WiFi.disconnect();
+    WiFi.mode(WIFI_OFF);
+  }
+
   // peer, set_mac
   bool peer( uint8_t *mac );
   void set_mac( uint8_t *new_mac );
@@ -118,8 +125,8 @@ public:
   // misc
   String   mac2str(const uint8_t *mac );
   uint32_t getLastReciveTime();
-  boolean debug(){ return debug_flag; }
-  void    debug( boolean flag ){ debug_flag = flag; }
+  boolean  debug(){ return debug_flag; }
+  void     debug( boolean flag ){ debug_flag = flag; }
 
 };
 
